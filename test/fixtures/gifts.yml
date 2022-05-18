@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  id: 1
+  name: lab
+  categories: [biology, chemistry]
+two: 
+  id: 2
+  name: Arduino Engineering Kit 
+  categories: [engineering, tools]
+three: 
+  id: 3
+  name: Dream job
+  categories: [it]
+  employee_id: 3
+four: 
+  id: 4
+  name: Platinum
+  categories: [chemistry]

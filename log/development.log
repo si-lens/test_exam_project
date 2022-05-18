@@ -1,0 +1,1402 @@
+Started GET "/gift/issue" for 127.0.0.1 at 2022-04-23 19:12:51 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    return json: "Your Gift is a DOG"
+               ^
+):
+  
+app/controllers/gift_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/gift_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/gift/issue" for 127.0.0.1 at 2022-04-23 19:13:09 +0200
+Processing by GiftController#issue as */*
+  Parameters: {"description"=>"111", "gift"=>{"description"=>"111"}}
+Completed 200 OK in 6ms (Views: 0.1ms | Allocations: 3003)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20220423172123)
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20220423172123)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "name" character varying, "colors" text[] DEFAULT '{}', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220423172123"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGifts (20220423172132)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "categories" text[] DEFAULT '{}', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220423172132"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-23 17:50:25.254485"], ["updated_at", "2022-04-23 17:50:25.254485"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeEmployeeColumnName (20220423180932)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateEmployeesColumnName (20220423180932)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "employees" RENAME COLUMN "colors" TO "interests"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220423180932"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.8ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "severin"], ["interests", "{\"high end audio\",photography,\"sitting comfortably\"}"], ["created_at", "2022-04-23 18:12:50.704649"], ["updated_at", "2022-04-23 18:12:50.704649"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "oliver"], ["interests", "{pets,scifi,\"music making\"}"], ["created_at", "2022-04-23 18:12:50.709389"], ["updated_at", "2022-04-23 18:12:50.709389"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "henry"], ["interests", "{scifi,music,drinking,motorcross}"], ["created_at", "2022-04-23 18:12:50.711773"], ["updated_at", "2022-04-23 18:12:50.711773"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "karsten"], ["interests", "{family,reading}"], ["created_at", "2022-04-23 18:12:50.714250"], ["updated_at", "2022-04-23 18:12:50.714250"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "mehmet"], ["interests", "{eating,sleeping,\"power lifting\"}"], ["created_at", "2022-04-23 18:12:50.716524"], ["updated_at", "2022-04-23 18:12:50.716524"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jan"], ["interests", "{triathlons,techno,family}"], ["created_at", "2022-04-23 18:12:50.718838"], ["updated_at", "2022-04-23 18:12:50.718838"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "alex"], ["interests", "{drinking,football,camping}"], ["created_at", "2022-04-23 18:12:50.721382"], ["updated_at", "2022-04-23 18:12:50.721382"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sarah"], ["interests", "{meditation,crossfit,yoga}"], ["created_at", "2022-04-23 18:12:50.723713"], ["updated_at", "2022-04-23 18:12:50.723713"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{handball,pets}"], ["created_at", "2022-04-23 18:12:50.725897"], ["updated_at", "2022-04-23 18:12:50.725897"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "werner"], ["interests", "{techno,\"music making\"}"], ["created_at", "2022-04-23 18:12:50.728132"], ["updated_at", "2022-04-23 18:12:50.728132"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "robert"], ["interests", "{photography,eating}"], ["created_at", "2022-04-23 18:12:50.730268"], ["updated_at", "2022-04-23 18:12:50.730268"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{pets}"], ["created_at", "2022-04-23 18:12:50.732311"], ["updated_at", "2022-04-23 18:12:50.732311"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jonathan"], ["interests", "{football,drinking,cocktails,running}"], ["created_at", "2022-04-23 18:12:50.734265"], ["updated_at", "2022-04-23 18:12:50.734265"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "maxim"], ["interests", "{scuba,motorcross,warhammer}"], ["created_at", "2022-04-23 18:12:50.736224"], ["updated_at", "2022-04-23 18:12:50.736224"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "michel"], ["interests", "{motorcross,family,warhammer}"], ["created_at", "2022-04-23 18:12:50.738170"], ["updated_at", "2022-04-23 18:12:50.738170"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "marc"], ["interests", "{skydiving,reading,family}"], ["created_at", "2022-04-23 18:12:50.740188"], ["updated_at", "2022-04-23 18:12:50.740188"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (1.0ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "netflix card"], ["categories", "{music,film,pets,scifi}"], ["created_at", "2022-04-23 18:12:50.750151"], ["updated_at", "2022-04-23 18:12:50.750151"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gold plated water bottle"], ["categories", "{\"power lifting\",triathlons,football,crossfit,handball,running}"], ["created_at", "2022-04-23 18:12:50.753418"], ["updated_at", "2022-04-23 18:12:50.753418"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "second hand earplugs"], ["categories", "{techno,music}"], ["created_at", "2022-04-23 18:12:50.755634"], ["updated_at", "2022-04-23 18:12:50.755634"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "6 pack of beer"], ["categories", "{drinking}"], ["created_at", "2022-04-23 18:12:50.757643"], ["updated_at", "2022-04-23 18:12:50.757643"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "peterborough united football shirt"], ["categories", "{football}"], ["created_at", "2022-04-23 18:12:50.759550"], ["updated_at", "2022-04-23 18:12:50.759550"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bonsai tree"], ["categories", "{botany}"], ["created_at", "2022-04-23 18:12:50.761539"], ["updated_at", "2022-04-23 18:12:50.761539"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog treats"], ["categories", "{pets}"], ["created_at", "2022-04-23 18:12:50.763498"], ["updated_at", "2022-04-23 18:12:50.763498"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "running shoes"], ["categories", "{running,triathlons}"], ["created_at", "2022-04-23 18:12:50.765463"], ["updated_at", "2022-04-23 18:12:50.765463"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "spotify voucher"], ["categories", "{music}"], ["created_at", "2022-04-23 18:12:50.767415"], ["updated_at", "2022-04-23 18:12:50.767415"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "goggles"], ["categories", "{scuba,skydiving}"], ["created_at", "2022-04-23 18:12:50.769321"], ["updated_at", "2022-04-23 18:12:50.769321"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "recipe book"], ["categories", "{eating}"], ["created_at", "2022-04-23 18:12:50.771509"], ["updated_at", "2022-04-23 18:12:50.771509"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "family vacation to disneyland"], ["categories", "{family}"], ["created_at", "2022-04-23 18:12:50.773435"], ["updated_at", "2022-04-23 18:12:50.773435"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bottle of wine"], ["categories", "{drinking}"], ["created_at", "2022-04-23 18:12:50.775504"], ["updated_at", "2022-04-23 18:12:50.775504"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book of german phrases"], ["categories", "{german,reading}"], ["created_at", "2022-04-23 18:12:50.777482"], ["updated_at", "2022-04-23 18:12:50.777482"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "cocktail mixer"], ["categories", "{cocktails,drinking}"], ["created_at", "2022-04-23 18:12:50.779566"], ["updated_at", "2022-04-23 18:12:50.779566"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog halloween costume"], ["categories", "{pets}"], ["created_at", "2022-04-23 18:12:50.781471"], ["updated_at", "2022-04-23 18:12:50.781471"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "yoga ball"], ["categories", "{yoga,\"sitting comfortably\"}"], ["created_at", "2022-04-23 18:12:50.783622"], ["updated_at", "2022-04-23 18:12:50.783622"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book on photographing nature"], ["categories", "{photography}"], ["created_at", "2022-04-23 18:12:50.785599"], ["updated_at", "2022-04-23 18:12:50.785599"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAssociationBetweenEmployeesAndGifts (20220424071541)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mALTER TABLE "gifts" ADD "employee_id" bigint[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_gifts_on_employee_id" ON "gifts" ("employee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220424071541"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGift Load (3.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "severin"], ["interests", "{\"high end audio\",photography,\"sitting comfortably\"}"], ["created_at", "2022-04-24 07:26:27.031304"], ["updated_at", "2022-04-24 07:26:27.031304"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "oliver"], ["interests", "{pets,scifi,\"music making\"}"], ["created_at", "2022-04-24 07:26:27.035900"], ["updated_at", "2022-04-24 07:26:27.035900"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "henry"], ["interests", "{scifi,music,drinking,motorcross}"], ["created_at", "2022-04-24 07:26:27.038267"], ["updated_at", "2022-04-24 07:26:27.038267"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "karsten"], ["interests", "{family,reading}"], ["created_at", "2022-04-24 07:26:27.051898"], ["updated_at", "2022-04-24 07:26:27.051898"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "mehmet"], ["interests", "{eating,sleeping,\"power lifting\"}"], ["created_at", "2022-04-24 07:26:27.074709"], ["updated_at", "2022-04-24 07:26:27.074709"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jan"], ["interests", "{triathlons,techno,family}"], ["created_at", "2022-04-24 07:26:27.077209"], ["updated_at", "2022-04-24 07:26:27.077209"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "alex"], ["interests", "{drinking,football,camping}"], ["created_at", "2022-04-24 07:26:27.079430"], ["updated_at", "2022-04-24 07:26:27.079430"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sarah"], ["interests", "{meditation,crossfit,yoga}"], ["created_at", "2022-04-24 07:26:27.081572"], ["updated_at", "2022-04-24 07:26:27.081572"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{handball,pets}"], ["created_at", "2022-04-24 07:26:27.083917"], ["updated_at", "2022-04-24 07:26:27.083917"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "werner"], ["interests", "{techno,\"music making\"}"], ["created_at", "2022-04-24 07:26:27.085762"], ["updated_at", "2022-04-24 07:26:27.085762"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "robert"], ["interests", "{photography,eating}"], ["created_at", "2022-04-24 07:26:27.087714"], ["updated_at", "2022-04-24 07:26:27.087714"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{pets}"], ["created_at", "2022-04-24 07:26:27.089642"], ["updated_at", "2022-04-24 07:26:27.089642"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jonathan"], ["interests", "{football,drinking,cocktails,running}"], ["created_at", "2022-04-24 07:26:27.091862"], ["updated_at", "2022-04-24 07:26:27.091862"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "maxim"], ["interests", "{scuba,motorcross,warhammer}"], ["created_at", "2022-04-24 07:26:27.093807"], ["updated_at", "2022-04-24 07:26:27.093807"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "michel"], ["interests", "{motorcross,family,warhammer}"], ["created_at", "2022-04-24 07:26:27.095923"], ["updated_at", "2022-04-24 07:26:27.095923"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "marc"], ["interests", "{skydiving,reading,family}"], ["created_at", "2022-04-24 07:26:27.097807"], ["updated_at", "2022-04-24 07:26:27.097807"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAssociationBetweenEmployeesAndGifts (20220424071541)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "gifts" DROP COLUMN "employee_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220424071541"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5004288788987972400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAssociationBetweenEmployeesAndGifts (20220424071541)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "gifts" ADD "employee_id" bigint[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_gifts_on_employee_id" ON "gifts" ("employee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220424071541"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5004288788987972400)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "severin"], ["interests", "{\"high end audio\",photography,\"sitting comfortably\"}"], ["created_at", "2022-04-24 07:32:40.123243"], ["updated_at", "2022-04-24 07:32:40.123243"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "oliver"], ["interests", "{pets,scifi,\"music making\"}"], ["created_at", "2022-04-24 07:32:40.129174"], ["updated_at", "2022-04-24 07:32:40.129174"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "henry"], ["interests", "{scifi,music,drinking,motorcross}"], ["created_at", "2022-04-24 07:32:40.131642"], ["updated_at", "2022-04-24 07:32:40.131642"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (5.6ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "karsten"], ["interests", "{family,reading}"], ["created_at", "2022-04-24 07:32:40.151249"], ["updated_at", "2022-04-24 07:32:40.151249"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "mehmet"], ["interests", "{eating,sleeping,\"power lifting\"}"], ["created_at", "2022-04-24 07:32:40.170025"], ["updated_at", "2022-04-24 07:32:40.170025"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jan"], ["interests", "{triathlons,techno,family}"], ["created_at", "2022-04-24 07:32:40.172746"], ["updated_at", "2022-04-24 07:32:40.172746"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "alex"], ["interests", "{drinking,football,camping}"], ["created_at", "2022-04-24 07:32:40.175185"], ["updated_at", "2022-04-24 07:32:40.175185"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sarah"], ["interests", "{meditation,crossfit,yoga}"], ["created_at", "2022-04-24 07:32:40.177546"], ["updated_at", "2022-04-24 07:32:40.177546"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{handball,pets}"], ["created_at", "2022-04-24 07:32:40.179808"], ["updated_at", "2022-04-24 07:32:40.179808"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "werner"], ["interests", "{techno,\"music making\"}"], ["created_at", "2022-04-24 07:32:40.182017"], ["updated_at", "2022-04-24 07:32:40.182017"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "robert"], ["interests", "{photography,eating}"], ["created_at", "2022-04-24 07:32:40.184280"], ["updated_at", "2022-04-24 07:32:40.184280"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{pets}"], ["created_at", "2022-04-24 07:32:40.186457"], ["updated_at", "2022-04-24 07:32:40.186457"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jonathan"], ["interests", "{football,drinking,cocktails,running}"], ["created_at", "2022-04-24 07:32:40.188756"], ["updated_at", "2022-04-24 07:32:40.188756"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "maxim"], ["interests", "{scuba,motorcross,warhammer}"], ["created_at", "2022-04-24 07:32:40.191177"], ["updated_at", "2022-04-24 07:32:40.191177"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "michel"], ["interests", "{motorcross,family,warhammer}"], ["created_at", "2022-04-24 07:32:40.193415"], ["updated_at", "2022-04-24 07:32:40.193415"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "marc"], ["interests", "{skydiving,reading,family}"], ["created_at", "2022-04-24 07:32:40.195595"], ["updated_at", "2022-04-24 07:32:40.195595"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.8ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "netflix card"], ["categories", "{music,film,pets,scifi}"], ["created_at", "2022-04-24 07:32:40.208393"], ["updated_at", "2022-04-24 07:32:40.208393"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gold plated water bottle"], ["categories", "{\"power lifting\",triathlons,football,crossfit,handball,running}"], ["created_at", "2022-04-24 07:32:40.211543"], ["updated_at", "2022-04-24 07:32:40.211543"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "second hand earplugs"], ["categories", "{techno,music}"], ["created_at", "2022-04-24 07:32:40.213747"], ["updated_at", "2022-04-24 07:32:40.213747"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "6 pack of beer"], ["categories", "{drinking}"], ["created_at", "2022-04-24 07:32:40.216084"], ["updated_at", "2022-04-24 07:32:40.216084"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "peterborough united football shirt"], ["categories", "{football}"], ["created_at", "2022-04-24 07:32:40.218172"], ["updated_at", "2022-04-24 07:32:40.218172"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bonsai tree"], ["categories", "{botany}"], ["created_at", "2022-04-24 07:32:40.220479"], ["updated_at", "2022-04-24 07:32:40.220479"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog treats"], ["categories", "{pets}"], ["created_at", "2022-04-24 07:32:40.222807"], ["updated_at", "2022-04-24 07:32:40.222807"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "running shoes"], ["categories", "{running,triathlons}"], ["created_at", "2022-04-24 07:32:40.225229"], ["updated_at", "2022-04-24 07:32:40.225229"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "spotify voucher"], ["categories", "{music}"], ["created_at", "2022-04-24 07:32:40.227737"], ["updated_at", "2022-04-24 07:32:40.227737"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "goggles"], ["categories", "{scuba,skydiving}"], ["created_at", "2022-04-24 07:32:40.229840"], ["updated_at", "2022-04-24 07:32:40.229840"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "recipe book"], ["categories", "{eating}"], ["created_at", "2022-04-24 07:32:40.232196"], ["updated_at", "2022-04-24 07:32:40.232196"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "family vacation to disneyland"], ["categories", "{family}"], ["created_at", "2022-04-24 07:32:40.234534"], ["updated_at", "2022-04-24 07:32:40.234534"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bottle of wine"], ["categories", "{drinking}"], ["created_at", "2022-04-24 07:32:40.236951"], ["updated_at", "2022-04-24 07:32:40.236951"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book of german phrases"], ["categories", "{german,reading}"], ["created_at", "2022-04-24 07:32:40.239388"], ["updated_at", "2022-04-24 07:32:40.239388"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "cocktail mixer"], ["categories", "{cocktails,drinking}"], ["created_at", "2022-04-24 07:32:40.241660"], ["updated_at", "2022-04-24 07:32:40.241660"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog halloween costume"], ["categories", "{pets}"], ["created_at", "2022-04-24 07:32:40.243941"], ["updated_at", "2022-04-24 07:32:40.243941"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "yoga ball"], ["categories", "{yoga,\"sitting comfortably\"}"], ["created_at", "2022-04-24 07:32:40.246015"], ["updated_at", "2022-04-24 07:32:40.246015"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book on photographing nature"], ["categories", "{photography}"], ["created_at", "2022-04-24 07:32:40.248423"], ["updated_at", "2022-04-24 07:32:40.248423"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Destroy (1.5ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 1]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 2]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 3]]
+  [1m[36mGift Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 4]]
+  [1m[36mGift Destroy (0.8ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 5]]
+  [1m[36mGift Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 6]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 7]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 8]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 9]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 10]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 11]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 12]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 13]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 14]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 15]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 16]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 17]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 18]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 19]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 20]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 21]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 22]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 23]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 24]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 25]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 26]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 27]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 28]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 29]]
+  [1m[36mGift Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 30]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 31]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 32]]
+  [1m[36mGift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 33]]
+  [1m[36mGift Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 34]]
+  [1m[36mGift Destroy (0.5ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 35]]
+  [1m[36mGift Destroy (0.4ms)[0m  [1m[31mDELETE FROM "gifts" WHERE "gifts"."id" = $1[0m  [["id", 36]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Destroy (0.8ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 1]]
+  [1m[36mEmployee Destroy (0.5ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 2]]
+  [1m[36mEmployee Destroy (0.5ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 3]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 4]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 5]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 6]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 7]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 8]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 9]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 10]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 11]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 12]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 13]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 14]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 15]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 16]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 17]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 18]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 19]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 20]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 21]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 22]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 23]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 24]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 25]]
+  [1m[36mEmployee Destroy (0.5ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 26]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 27]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 28]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 29]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 30]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 31]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 32]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 33]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 34]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 35]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 36]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 37]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 38]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 39]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 40]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 41]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 42]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 43]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 44]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 45]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 46]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 47]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 48]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "severin"], ["interests", "{\"high end audio\",photography,\"sitting comfortably\"}"], ["created_at", "2022-04-24 07:34:10.184800"], ["updated_at", "2022-04-24 07:34:10.184800"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "oliver"], ["interests", "{pets,scifi,\"music making\"}"], ["created_at", "2022-04-24 07:34:10.189040"], ["updated_at", "2022-04-24 07:34:10.189040"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "henry"], ["interests", "{scifi,music,drinking,motorcross}"], ["created_at", "2022-04-24 07:34:10.191496"], ["updated_at", "2022-04-24 07:34:10.191496"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "karsten"], ["interests", "{family,reading}"], ["created_at", "2022-04-24 07:34:10.193871"], ["updated_at", "2022-04-24 07:34:10.193871"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "mehmet"], ["interests", "{eating,sleeping,\"power lifting\"}"], ["created_at", "2022-04-24 07:34:10.195989"], ["updated_at", "2022-04-24 07:34:10.195989"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jan"], ["interests", "{triathlons,techno,family}"], ["created_at", "2022-04-24 07:34:10.198207"], ["updated_at", "2022-04-24 07:34:10.198207"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "alex"], ["interests", "{drinking,football,camping}"], ["created_at", "2022-04-24 07:34:10.200392"], ["updated_at", "2022-04-24 07:34:10.200392"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sarah"], ["interests", "{meditation,crossfit,yoga}"], ["created_at", "2022-04-24 07:34:10.202498"], ["updated_at", "2022-04-24 07:34:10.202498"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{handball,pets}"], ["created_at", "2022-04-24 07:34:10.204673"], ["updated_at", "2022-04-24 07:34:10.204673"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "werner"], ["interests", "{techno,\"music making\"}"], ["created_at", "2022-04-24 07:34:10.206637"], ["updated_at", "2022-04-24 07:34:10.206637"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "robert"], ["interests", "{photography,eating}"], ["created_at", "2022-04-24 07:34:10.208877"], ["updated_at", "2022-04-24 07:34:10.208877"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "daniel"], ["interests", "{pets}"], ["created_at", "2022-04-24 07:34:10.210801"], ["updated_at", "2022-04-24 07:34:10.210801"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jonathan"], ["interests", "{football,drinking,cocktails,running}"], ["created_at", "2022-04-24 07:34:10.212689"], ["updated_at", "2022-04-24 07:34:10.212689"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "maxim"], ["interests", "{scuba,motorcross,warhammer}"], ["created_at", "2022-04-24 07:34:10.214744"], ["updated_at", "2022-04-24 07:34:10.214744"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "michel"], ["interests", "{motorcross,family,warhammer}"], ["created_at", "2022-04-24 07:34:10.216628"], ["updated_at", "2022-04-24 07:34:10.216628"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "marc"], ["interests", "{skydiving,reading,family}"], ["created_at", "2022-04-24 07:34:10.218480"], ["updated_at", "2022-04-24 07:34:10.218480"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.6ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "netflix card"], ["categories", "{music,film,pets,scifi}"], ["created_at", "2022-04-24 07:34:10.227454"], ["updated_at", "2022-04-24 07:34:10.227454"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "gold plated water bottle"], ["categories", "{\"power lifting\",triathlons,football,crossfit,handball,running}"], ["created_at", "2022-04-24 07:34:10.230243"], ["updated_at", "2022-04-24 07:34:10.230243"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "second hand earplugs"], ["categories", "{techno,music}"], ["created_at", "2022-04-24 07:34:10.232413"], ["updated_at", "2022-04-24 07:34:10.232413"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "6 pack of beer"], ["categories", "{drinking}"], ["created_at", "2022-04-24 07:34:10.234517"], ["updated_at", "2022-04-24 07:34:10.234517"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "peterborough united football shirt"], ["categories", "{football}"], ["created_at", "2022-04-24 07:34:10.236684"], ["updated_at", "2022-04-24 07:34:10.236684"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bonsai tree"], ["categories", "{botany}"], ["created_at", "2022-04-24 07:34:10.238753"], ["updated_at", "2022-04-24 07:34:10.238753"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog treats"], ["categories", "{pets}"], ["created_at", "2022-04-24 07:34:10.240733"], ["updated_at", "2022-04-24 07:34:10.240733"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "running shoes"], ["categories", "{running,triathlons}"], ["created_at", "2022-04-24 07:34:10.242693"], ["updated_at", "2022-04-24 07:34:10.242693"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "spotify voucher"], ["categories", "{music}"], ["created_at", "2022-04-24 07:34:10.244682"], ["updated_at", "2022-04-24 07:34:10.244682"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "goggles"], ["categories", "{scuba,skydiving}"], ["created_at", "2022-04-24 07:34:10.246659"], ["updated_at", "2022-04-24 07:34:10.246659"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "recipe book"], ["categories", "{eating}"], ["created_at", "2022-04-24 07:34:10.248652"], ["updated_at", "2022-04-24 07:34:10.248652"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "family vacation to disneyland"], ["categories", "{family}"], ["created_at", "2022-04-24 07:34:10.250799"], ["updated_at", "2022-04-24 07:34:10.250799"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bottle of wine"], ["categories", "{drinking}"], ["created_at", "2022-04-24 07:34:10.252824"], ["updated_at", "2022-04-24 07:34:10.252824"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book of german phrases"], ["categories", "{german,reading}"], ["created_at", "2022-04-24 07:34:10.254957"], ["updated_at", "2022-04-24 07:34:10.254957"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "cocktail mixer"], ["categories", "{cocktails,drinking}"], ["created_at", "2022-04-24 07:34:10.257038"], ["updated_at", "2022-04-24 07:34:10.257038"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "dog halloween costume"], ["categories", "{pets}"], ["created_at", "2022-04-24 07:34:10.259445"], ["updated_at", "2022-04-24 07:34:10.259445"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "yoga ball"], ["categories", "{yoga,\"sitting comfortably\"}"], ["created_at", "2022-04-24 07:34:10.261530"], ["updated_at", "2022-04-24 07:34:10.261530"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "categories", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "book on photographing nature"], ["categories", "{photography}"], ["created_at", "2022-04-24 07:34:10.263550"], ["updated_at", "2022-04-24 07:34:10.263550"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts" WHERE "gifts"."employee_id" IS NULL[0m
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (3.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (motorcross = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (motorcross = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (football = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND "gifts"."categories" = $1 /* loading for inspect */ LIMIT $2[0m  [["categories", "football"], ["LIMIT", 11]]
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL WHERE 'football' = ANY (categories)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND WHERE 'football' = ANY (categories)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND WHERE "football" = ANY (categories)[0m
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (football = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (2.1ms)[0m  [1m[34mselect * from gifts where 'football'=ANY(categories);[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect * from gifts where 'football'=ANY(categories);[0m
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories))[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories))[0m
+  [1m[36mGift Load (5.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (''football'' = ANY (categories))[0m
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND (''football'' = ANY (categories))[0m
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories))[0m
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[36mGift Load (3.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ ORDER BY count(categories) DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ ORDER BY array_length(categories) DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY "gifts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (2.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ ORDER BY created_at DESC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (2.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ ORDER BY array_length(categories) DESC LIMIT $1[0m  [["LIMIT", 11]]
+Creating scope :ordered_by_number_of_categories. Overwriting existing method Gift.ordered_by_number_of_categories.
+Creating scope :ordered_by_number_of_categories. Overwriting existing method Gift.ordered_by_number_of_categories.
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" ORDER BY array_length(categories, 1) desc[0m
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) /* loading for inspect */ ORDER BY categories desc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) /* loading for inspect */ ORDER BY categories asc LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/gift/issue/49" for 127.0.0.1 at 2022-04-24 13:31:04 +0200
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/gift/issue/49"):
+  
+Started GET "/gift/receive/49" for 127.0.0.1 at 2022-04-24 13:31:12 +0200
+  
+SyntaxError (/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+    rescue ActiveRecord::RecordNotFound
+    ^~~~~~
+):
+  
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+Started GET "/gift/receive/49" for 127.0.0.1 at 2022-04-24 13:32:15 +0200
+  
+SyntaxError (/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+    rescue ActiveRecord::RecordNotFound
+    ^~~~~~
+/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:17: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+app/controllers/gift_controller.rb:17: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+app/controllers/gift_controller.rb:17: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gift/receive/49" for 127.0.0.1 at 2022-04-24 13:32:47 +0200
+  
+SyntaxError (/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+    rescue ActiveRecord::RecordNotFound
+    ^~~~~~
+):
+  
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+app/controllers/gift_controller.rb:13: syntax error, unexpected `rescue', expecting ')'
+Started GET "/gift/receive/49" for 127.0.0.1 at 2022-04-24 13:33:04 +0200
+  
+SyntaxError (/Users/szymon/Documents/GitHub/gift_api/app/controllers/gift_controller.rb:15: syntax error, unexpected `end', expecting ')'
+  end
+  ^~~
+):
+  
+app/controllers/gift_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/gift_controller.rb:15: syntax error, unexpected `end', expecting ')'
+Started GET "/gift/receive/49" for 127.0.0.1 at 2022-04-24 13:34:29 +0200
+Processing by GiftController#receive as */*
+  Parameters: {"description"=>"111", "id"=>"49", "gift"=>{}}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/gift_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.8ms | Allocations: 9469)
+
+
+  
+NoMethodError (undefined method `issue_for' for Gift:Class):
+  
+app/controllers/gift_controller.rb:5:in `receive'
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 13:44:59 +0200
+  
+ActionController::RoutingError (uninitialized constant EmployeeController
+Did you mean?  EmployeesController):
+  
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 13:45:57 +0200
+  
+AbstractController::ActionNotFound (The action 'claim_gift' could not be found for EmployeesController
+Did you mean?  receive):
+  
+actionpack (6.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 13:47:02 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 12.7ms | Allocations: 4480)
+
+
+  
+NoMethodError (undefined method `gift' for {:employee=>#<Employee id: 49, name: "severin", interests: ["high end audio", "photography", "sitting comfortably"], created_at: "2022-04-24 07:34:10.184800000 +0000", updated_at: "2022-04-24 07:34:10.184800000 +0000">}:Hash):
+  
+app/models/gift.rb:13:in `hand_out'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:14:00 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 13.3ms | Allocations: 4266)
+
+
+  
+NoMethodError (undefined method `gift' for {:employee=>#<Employee id: 49, name: "severin", interests: ["high end audio", "photography", "sitting comfortably"], created_at: "2022-04-24 07:34:10.184800000 +0000", updated_at: "2022-04-24 07:34:10.184800000 +0000">}:Hash):
+  
+app/models/gift.rb:38:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:15:15 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 1623)
+
+
+  
+NoMethodError (undefined method `gift' for {:employee=>#<Employee id: 49, name: "severin", interests: ["high end audio", "photography", "sitting comfortably"], created_at: "2022-04-24 07:34:10.184800000 +0000", updated_at: "2022-04-24 07:34:10.184800000 +0000">}:Hash):
+  
+app/models/gift.rb:38:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-04-24 15:15:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:20 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('high end audio' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('photography' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('photography' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.7ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:16:20.883257"], ["employee_id", 49], ["id", 54]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 18.4ms | Allocations: 12549)
+
+
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:25 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1085)
+
+
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:25 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1080)
+
+
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:26 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1065)
+
+
+Started GET "/employees/49/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:27 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"49", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 49], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1065)
+
+
+Started GET "/employees/50/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:40 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"50", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 50], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.5ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:16:40.117376"], ["employee_id", 50], ["id", 43]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 3706)
+
+
+Started GET "/employees/51/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:49 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"51", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 51], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('scifi' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('scifi' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.4ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:16:49.359905"], ["employee_id", 51], ["id", 37]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 3722)
+
+
+Started GET "/employees/52/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:53 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"52", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 52], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('family' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('family' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.3ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:16:53.494759"], ["employee_id", 52], ["id", 48]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 3705)
+
+
+Started GET "/employees/53/claim_gift" for 127.0.0.1 at 2022-04-24 15:16:58 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"53", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 53], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('eating' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('eating' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.5ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:16:58.885228"], ["employee_id", 53], ["id", 47]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 3710)
+
+
+Started GET "/employees/54/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:03 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"54", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 54], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('triathlons' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('triathlons' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.5ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:17:03.130798"], ["employee_id", 54], ["id", 44]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 3712)
+
+
+Started GET "/employees/55/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:06 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"55", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 55], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('drinking' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('drinking' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.4ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:17:06.512242"], ["employee_id", 55], ["id", 40]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 3706)
+
+
+Started GET "/employees/56/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:10 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"56", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 56], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('meditation' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('crossfit' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('crossfit' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.6ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:17:10.599010"], ["employee_id", 56], ["id", 38]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 4251)
+
+
+Started GET "/employees/57/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:14 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"57", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 57], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('handball' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.5ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:17:14.695025"], ["employee_id", 57], ["id", 52]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 4233)
+
+
+Started GET "/employees/58/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:19 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"58", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (8.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 58], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('techno' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('techno' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.6ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:17:19.706564"], ["employee_id", 58], ["id", 39]]
+  ↳ app/models/gift.rb:21:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 12.0ms | Allocations: 3702)
+
+
+Started GET "/employees/59/claim_gift" for 127.0.0.1 at 2022-04-24 15:17:23 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"59", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 59], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:38:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('photography' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('eating' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:19:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 2913)
+
+
+Started GET "/employees/60/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:00 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"60", "employee"=>{}}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 60], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 13.4ms | Allocations: 5717)
+
+
+Started GET "/employees/61/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:04 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"61", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 61], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('football' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.9ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:43:04.332058"], ["employee_id", 61], ["id", 41]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 4.1ms | Allocations: 6161)
+
+
+Started GET "/employees/62/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:08 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"62", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 62], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('scuba' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('scuba' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.6ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:43:08.644222"], ["employee_id", 62], ["id", 46]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 8.9ms | Allocations: 3708)
+
+
+Started GET "/employees/63/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:10 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"63", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 63], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('motorcross' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('family' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('warhammer' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 3446)
+
+
+Started GET "/employees/64/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:11 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"64", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 64], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('skydiving' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('reading' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('reading' = ANY (categories)) ORDER BY categories DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Update (0.5ms)[0m  [1m[33mUPDATE "gifts" SET "updated_at" = $1, "employee_id" = $2 WHERE "gifts"."id" = $3[0m  [["updated_at", "2022-04-24 13:43:11.861472"], ["employee_id", 64], ["id", 50]]
+  ↳ app/models/gift.rb:20:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 4241)
+
+
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:43:17 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 969)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:44:42 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 951)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:44:53 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 5.2ms | Allocations: 110)
+
+
+  
+RuntimeError ():
+  
+app/controllers/employees_controller.rb:11:in `set_employee'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:02 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:12:in `set_employee'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 6.2ms | Allocations: 2569)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:14 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 4.4ms | Allocations: 2578)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:15 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 951)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:16 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 949)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:17 +0200
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 950)
+
+
+  
+NoMethodError (undefined method `gift' for nil:NilClass):
+  
+app/models/gift.rb:37:in `has_a_gift?'
+app/models/gift.rb:13:in `hand_out_to'
+app/controllers/employees_controller.rb:5:in `claim_gift'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:39 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 404 Not Found in 4ms (ActiveRecord: 4.8ms | Allocations: 759)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=65):
+  
+app/controllers/employees_controller.rb:11:in `set_employee'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:45:57 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 6.2ms | Allocations: 762)
+
+
+  
+RuntimeError (Employee not found):
+  
+app/controllers/employees_controller.rb:14:in `rescue in set_employee'
+app/controllers/employees_controller.rb:10:in `set_employee'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:46:10 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 497)
+
+
+  
+RuntimeError (Employee not found):
+  
+app/controllers/employees_controller.rb:14:in `rescue in set_employee'
+app/controllers/employees_controller.rb:10:in `set_employee'
+Started GET "/employees/65/claim_gift" for 127.0.0.1 at 2022-04-24 15:46:40 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"65", "employee"=>{}}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 404 Not Found in 4ms (ActiveRecord: 5.7ms | Allocations: 755)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=65):
+  
+app/controllers/employees_controller.rb:11:in `set_employee'
+Started GET "/employees/61/claim_gift" for 127.0.0.1 at 2022-04-24 15:49:21 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"61", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 61], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 10.4ms | Allocations: 6761)
+
+
+Started GET "/employees/60/claim_gift" for 127.0.0.1 at 2022-04-24 15:49:30 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"60", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 60], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mGift Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."employee_id" IS NULL AND ('pets' = ANY (categories)) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/gift.rb:18:in `block (2 levels) in hand_out_to'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/gift.rb:15:in `hand_out_to'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2483)
+
+
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "gifts" WHERE "gifts"."employee_id" IS NULL[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL[0m
+Started GET "/employees/46/claim_gift" for 127.0.0.1 at 2022-04-24 15:51:16 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"46", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 501)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=46):
+  
+app/controllers/employees_controller.rb:11:in `set_employee'
+Started GET "/employees/50/claim_gift" for 127.0.0.1 at 2022-04-24 15:51:25 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"50", "employee"=>{}}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 50], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1062)
+
+
+Started GET "/employees/51/claim_gift" for 127.0.0.1 at 2022-04-24 15:51:31 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"51", "employee"=>{}}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 51], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1063)
+
+
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NOT NULL /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."id" IS NOT NULL[0m
+Started GET "/employees/55/claim_gift" for 127.0.0.1 at 2022-04-24 15:55:29 +0200
+Processing by EmployeesController#claim_gift as */*
+  Parameters: {"description"=>"111", "id"=>"55", "employee"=>{}}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 55], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 11.2ms | Allocations: 6699)
+
+
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" IS NULL[0m
+Started GET "/employees/51/claim_gift" for 127.0.0.1 at 2022-04-24 17:20:36 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#claim_gift as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:11:in `set_employee'
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."employee_id" = $1 LIMIT $2[0m  [["employee_id", 51], ["LIMIT", 1]]
+  ↳ app/models/gift.rb:37:in `has_a_gift?'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 7567)
+
+
