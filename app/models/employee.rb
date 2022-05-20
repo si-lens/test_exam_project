@@ -1,9 +1,5 @@
 class Employee < ApplicationRecord
-  OverridingGiftError = Class.new(StandardError)
   has_one :gift
-  def reveal_gift
-    "Hello #{name}. Your gift is \"#{gift.name}\"" if gift.present?
-  end
 
   def self.assign_gift(employee_id:)
     employee = nil
@@ -30,4 +26,10 @@ class Employee < ApplicationRecord
   def self.ensure_employee_has_no_gift(employee)
     raise OverridingGiftError if employee.gift.present?
   end
+
+  def reveal_gift
+    "Hello #{name}. Your gift is \"#{gift.name}\"" if gift.present?
+  end
+
+  OverridingGiftError = Class.new(StandardError)
 end
