@@ -1,10 +1,15 @@
 require 'test_helper'
-
+require 'minitest/autorun'
 class EmployeeTest < ActiveSupport::TestCase
   test 'assigning gift to employee' do
     employee = employees(:kaja)
-    assert_nil employee.gift
-    Employee.assign_gift(employee_id: employee.id)
+    mock = Minitest::Mock.new
+    expected_gifts = [Gift.new(name: 'lab', categories: ['biology'], employee_id: nil)]
+    mock.expect :call, expected_gifts, [employee.interests.first]
+    Gift.stub :for_interest, mock do
+      Employee.assign_gift(employee_id: employee.id)
+    end
+    mock.verify
     employee.reload
     assert_equal 'lab', employee.gift.name
   end
